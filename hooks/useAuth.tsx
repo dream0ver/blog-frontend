@@ -6,11 +6,8 @@ import { useContext } from "react"
 import { toast } from "react-toastify"
 export default function useAuth() {
   const { auth, setAuth } = useContext(AuthContext)
-
   const isLoggedIn = Object.keys(auth).length
-
   const router = useRouter()
-
   const logout = () => {
     axios
       .get(endpoints.logout)
@@ -22,19 +19,18 @@ export default function useAuth() {
       .catch(err => {
         setAuth({})
         router.push("/")
-        if ([401, 403, 200].includes(err.response.status)) {
+        if ([401, 403, 200].includes(err.response.status))
           toast.success("Logout successfull.")
-        }
       })
   }
-
   const getAccessToken = () => {
-    return axios
+    axios
       .get(endpoints.getAccessToken)
       .then(res => setAuth(res.data))
-      .catch(err => logout())
+      .catch(err => {
+        err.response.status !== 403 && logout()
+      })
   }
-
   return {
     auth,
     setAuth,
