@@ -1,13 +1,22 @@
+"use client"
 import Posts from "@/components/Posts"
 import axios from "@/util/axios"
 import endpoints from "@/util/endpoints"
 import { PostCardPropType } from "@/util/types"
+import { useEffect, useState } from "react"
 
-export const revalidate = 0
-export default async function Home({ searchParams }: { searchParams: any }) {
-  const URL =
-    endpoints.getPostByCategory + (searchParams?.cat ? searchParams.cat : "")
-  const posts: PostCardPropType[] = await axios.get(URL).then(res => res.data)
+export default function Home({ searchParams }: { searchParams: any }) {
+  const [posts, setPosts] = useState<PostCardPropType[] | []>([])
+  const fetchPosts = () => {
+    const URL =
+      endpoints.getPostByCategory + (searchParams?.cat ? searchParams.cat : "")
+    axios.get(URL).then(res => setPosts(res.data))
+  }
+
+  useEffect(() => {
+    fetchPosts()
+  }, [])
+
   return (
     <main>
       <Posts posts={posts} />
