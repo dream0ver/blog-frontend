@@ -7,7 +7,10 @@ export default function NavbarCategories() {
   return (
     <ul className="flex gap-8">
       {CATEGORIES.map(cat => (
-        <Link href={cat.path}>
+        <Link
+          href={cat.path}
+          key={cat.label}
+        >
           <li
             className={`uppercase ${
               cat.label.toLocaleLowerCase() == currentCategory &&

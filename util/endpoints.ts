@@ -4,6 +4,9 @@ const endpoints = {
   register: "/api/auth/register",
   login: "/api/auth/login",
   logout: "/api/auth/logout",
-  getAccessToken: "/api/auth/generateAccessToken"
+  getAccessToken: "/api/auth/generateAccessToken",
+  createPost: "/api/v1/createPost",
+  editPost: "/api/v1/editPost",
+  deletePost: "/api/v1//deletePost/"
 }
 export default endpoints

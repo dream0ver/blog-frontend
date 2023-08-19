@@ -6,7 +6,7 @@ import { useContext } from "react"
 import { toast } from "react-toastify"
 export default function useAuth() {
   const { auth, setAuth } = useContext(AuthContext)
-  const isLoggedIn = Object.keys(auth).length
+  const isLoggedIn = !!auth?.username
   const router = useRouter()
   const logout = () => {
     axios
@@ -23,19 +23,23 @@ export default function useAuth() {
           toast.success("Logout successfull.")
       })
   }
-  const getAccessToken = () => {
-    axios
+  const getAccessToken = (): Promise<any> => {
+    return axios
       .get(endpoints.getAccessToken)
-      .then(res => setAuth(res.data))
+      .then(res => {
+        setAuth(res.data)
+        return Promise.resolve(res)
+      })
       .catch(err => {
         err.response.status !== 403 && logout()
+        return Promise.reject(err)
       })
   }
   return {
     auth,
     setAuth,
     isLoggedIn,
-    logout: () => logout(),
-    getAccessToken: () => getAccessToken()
+    logout,
+    getAccessToken
   }
 }

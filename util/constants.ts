@@ -1,22 +1,27 @@
 export const CATEGORIES = [
   {
     label: "All",
-    path: "/"
+    path: "/",
+    value: undefined
   },
   {
     label: "Science",
-    path: "/?cat=science"
+    path: "/?cat=science",
+    value: "science"
   },
   {
     label: "Lifestyle",
-    path: "/?cat=lifestyle"
+    path: "/?cat=lifestyle",
+    value: "lifestyle"
   },
   {
     label: "Fitness",
-    path: "/?cat=fitness"
+    path: "/?cat=fitness",
+    value: "fitness"
   },
   {
     label: "Food",
-    path: "/?cat=food"
+    path: "/?cat=food",
+    value: "food"
   }
 ]

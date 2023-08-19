@@ -17,6 +17,9 @@ export default function Navbar() {
             <span className="text-purple-500 font-bold">{`${
               auth.roles?.includes(9000) ? `#${auth.username}` : auth.username
             }`}</span>
+            <Link href="/new-post">
+              <ButtonPrimary label="New Post" />
+            </Link>
             <ButtonPrimary
               onClick={logout}
               label="Sign out"

@@ -2,6 +2,8 @@ import Posts from "@/components/Posts"
 import axios from "@/util/axios"
 import endpoints from "@/util/endpoints"
 import { PostCardPropType } from "@/util/types"
+
+export const revalidate = 0
 export default async function Home({ searchParams }: { searchParams: any }) {
   const URL =
     endpoints.getPostByCategory + (searchParams?.cat ? searchParams.cat : "")

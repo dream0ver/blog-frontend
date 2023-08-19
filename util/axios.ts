@@ -1,7 +1,6 @@
 import axios from "axios"
-const baseURL = "http://localhost:8080"
-const axiosPublic = axios.create({
-  baseURL
+export const baseURL = "http://localhost:8080"
+export default axios.create({
+  baseURL,
+  withCredentials: true
 })
-axiosPublic.defaults.withCredentials = true
-export default axiosPublic
