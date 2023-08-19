@@ -10,7 +10,7 @@ export default function PostCard(props: PostCardPropType) {
         <div className="relative rounded-3xl overflow-hidden">
           <Image
             className="object-cover"
-            src={props.image}
+            src={"/" + props.image}
             alt={props.title}
             fill
           />

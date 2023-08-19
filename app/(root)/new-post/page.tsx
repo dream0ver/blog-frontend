@@ -59,7 +59,8 @@ export default function Page() {
         category: state.category,
         body: state.body,
         userId: auth.id,
-        userName: auth.username
+        userName: auth.username,
+        image: state.image
       })
       .then(res => {
         push("/")

@@ -111,7 +111,7 @@ export default function Page({ params }: { params: any }) {
       {post_info?.image && (
         <div className="relative h-[500px]  rounded-3xl overflow-hidden my-4">
           <Image
-            src={post_info?.image}
+            src={"/" + post_info?.image}
             alt={post_info?.title}
             fill
             className="object-cover"
