@@ -7,6 +7,7 @@ const endpoints = {
   getAccessToken: "/api/auth/generateAccessToken",
   createPost: "/api/v1/createPost",
   editPost: "/api/v1/editPost",
-  deletePost: "/api/v1//deletePost/"
+  deletePost: "/api/v1/deletePost/",
+  uploadFile: "/api/v1/uploadFile"
 }
 export default endpoints
