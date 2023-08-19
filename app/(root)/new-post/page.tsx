@@ -89,7 +89,7 @@ export default function Page() {
           name="body"
           placeholder="Post Content"
           className="outline-none border border-slate-200 p-5 rounded-3xl text-xl resize-none h-[600px]"
-          maxLength={1000}
+          maxLength={10000}
         ></textarea>
       </section>
     </>

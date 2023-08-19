@@ -131,7 +131,7 @@ export default function Page({ params }: { params: any }) {
         <span className="font-extrabold text-purple-500">
           {post_info?.category?.toUpperCase()}
         </span>
-        <span className="text-slate-600 font-light">{`Posted by ${post_info?.user_id}`}</span>
+        <span className="text-slate-600">{`Posted by ${post_info?.username}`}</span>
       </div>
       <p
         className={`text-slate-600 text-justify text-lg mt-10 ${

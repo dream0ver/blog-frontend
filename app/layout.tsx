@@ -25,7 +25,7 @@ export default function RootLayout({
           href="https://stijndv.com/fonts/Eudoxus-Sans.css"
         />
       </head>
-      <body className="mx-auto w-[1400px]">
+      <body className="mx-auto w-[1400px] select-none">
         <AuthContextProvider>
           {children}
           <PersistLogin />

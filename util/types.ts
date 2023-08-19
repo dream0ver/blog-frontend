@@ -10,6 +10,7 @@ export type PostCardPropType = {
   body: string
   image: string
   category: string
+  username?: string
 }
 
 export type AuthContextType = {

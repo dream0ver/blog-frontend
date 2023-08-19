@@ -15,7 +15,7 @@ export default function Home({ searchParams }: { searchParams: any }) {
 
   useEffect(() => {
     fetchPosts()
-  }, [])
+  }, [searchParams])
 
   return (
     <main>
