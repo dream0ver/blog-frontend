@@ -127,7 +127,7 @@ export default function Page() {
               Please select
             </option>
             {CATEGORIES.filter(cat => cat.value).map(cat => (
-              <option value={cat.value}>{cat.label}</option>
+              <option value={cat.value} key={cat.label}>{cat.label}</option>
             ))}
           </select>
         </div>
