@@ -111,7 +111,7 @@ export default function Page({ params }: { params: any }) {
       {post_info?.image && (
         <div className="relative h-[500px]  rounded-3xl overflow-hidden my-4">
           <Image
-            src={"/" + post_info?.image}
+            src={post_info?.image}
             alt={post_info?.title}
             fill
             className="object-cover"
@@ -119,9 +119,8 @@ export default function Page({ params }: { params: any }) {
         </div>
       )}
       <h1
-        className={`text-slate-700 font-extrabold text-[48px] ${
-          editing && "border-2 border-slate-950"
-        }`}
+        className={`text-slate-700 font-extrabold text-[48px] ${editing && "border-2 border-slate-950"
+          }`}
         contentEditable={editing}
         ref={titleRef}
       >
@@ -134,9 +133,8 @@ export default function Page({ params }: { params: any }) {
         <span className="text-slate-600">{`Posted by ${post_info?.username}`}</span>
       </div>
       <p
-        className={`text-slate-600 text-justify text-lg mt-10 ${
-          editing && "border-2 border-slate-950"
-        } `}
+        className={`text-slate-600 text-justify text-lg mt-10 ${editing && "border-2 border-slate-950"
+          } `}
         contentEditable={editing}
         ref={bodyRef}
       >

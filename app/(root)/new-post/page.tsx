@@ -99,7 +99,7 @@ export default function Page() {
         {state.image && (
           <div className="relative h-[500px]  rounded-3xl overflow-hidden my-4">
             <Image
-              src={"/" + state.image}
+              src={state.image}
               alt={"image"}
               fill
               className="object-cover"
